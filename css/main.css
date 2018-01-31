@@ -1,3 +1,6 @@
+/*Fonts import*/
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+
 /*Overriding browser styles*/
 *{
     margin: 0px;
@@ -14,6 +17,7 @@ html, body{
 
 body{
     overflow: hidden;
+    font-family: 'Rubik', sans-serif;
 }
 
 /*General layout of the website*/
@@ -21,7 +25,8 @@ body{
     height: 100%;
     width: 100%;
     overflow: hidden;
-    background-color: #ffffff;
+    background-color: #C50138;
+    color: #ffffff;
     display: flex;
     flex-direction: column;
 }
@@ -57,11 +62,14 @@ h1{
     margin-top: 20px;
 }
 
-#hamburger{
+#hamburger-wrapper{
     border: 1px solid black;
     height: 50px;
     width: 50px;
     margin-right: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /*Styling of footer section*/
@@ -110,11 +118,22 @@ h1{
     border: 1px solid black;
     position: absolute;
     left: calc((100vw - 65.2vh) / 2);
-    top: calc((100% - 65.2vh) / 2
+    top: calc((100% - 65.2vh) / 2);
     height: 65.2vh;
     width: 65.2vh;
 }
-@@media (orientation: landscape) {
+
+/*#showcase-shadow{
+    height: 100%;
+    width: 100%;
+}*/
+
+#showcase-shadow img{
+    height: 65.2vh;
+    width: 65.2vh;
+}
+/*Use this if you want to improve for the mobile layout*/
+@media (orientation: landscape) {
     #showcasing-wrapper{
         height: 65.2vh;
         width: 65.2vh;
