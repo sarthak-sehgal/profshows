@@ -119,8 +119,8 @@ h1{
     position: absolute;
     left: calc((100vw - 65.2vh) / 2);
     top: calc((100% - 65.2vh) / 2);
-    height: 65.2vh;
-    width: 65.2vh;
+    /*height: 65.2vh;
+    width: 65.2vh;*/
 }
 
 /*#showcase-shadow{
@@ -133,9 +133,41 @@ h1{
     width: 65.2vh;
 }
 /*Use this if you want to improve for the mobile layout*/
-@media (orientation: landscape) {
+@media screen and (orientation: landscape) {
     #showcasing-wrapper{
         height: 65.2vh;
         width: 65.2vh;
+        left: calc((100vw - 65.2vh) / 2);
+        top: calc((100% - 65.2vh) / 2);
     }
+}
+@media screen and (orientation: portrait) {
+    #showcasing-wrapper{
+        height: 65.2vw;
+        width: 65.2vw;
+        /*left: calc((( (100vw - 65px) - 65.2vw) / 2) + 65px);*/
+        left: calc(65px + ((100vw - 65px) - 65.2vw)/2);
+        top: calc((100% - 65.2vw) / 2);
+        background-color: white;
+    }
+}
+/*Icon thumbnails styling*/
+.ico-thmb-wrapper{
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.ico-thmb{
+    height: 3px;
+    width: 100%;
+    border-radius: 1000px;
+    overflow: hidden;
+}
+
+.white-div{
+    background-color: white;
+    height: 100%;
+    width: 100%;
 }
