@@ -116,12 +116,40 @@ h1{
 }
 
 #showcasing-wrapper{
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     position: absolute;
     left: calc((100vw - 65.2vh) / 2);
     top: calc((100% - 65.2vh) / 2);
+    z-index: 999; 
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
     /*height: 65.2vh;
     width: 65.2vh;*/
+}
+
+.showcase-item {
+    background-size: cover;
+    height: 65.2vh;
+    width: 65.2vh;
+    z-index: 999;
+    opacity: 0;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+#profshow-1 {
+    background-image: url('../img/a1.png');
+    opacity: 1;
+}
+#profshow-2 {
+    background-image: url('../img/a2.png'); 
+}
+#profshow-3 {
+    background-image: url('../img/a3.png'); 
 }
 
 /*#showcase-shadow{
@@ -129,8 +157,21 @@ h1{
     width: 100%;
 }*/
 
-#showcase-shadow {
-    
+
+#vinyl {
+    display: block;
+    background: url(../img/vinyl.png);
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 178vw;
+    background-size: contain;
+    top: 50%;
+    left: 50%;
+    /*margin: -50vh -89vh;*/
+    margin: -50vh -75vh;
+    z-index: 0;
+    position: absolute;
+    z-index: 0;
 }
 #showcase-shadow{
     display: block;
@@ -151,6 +192,11 @@ h1{
         width: 65.2vh;
         left: calc((100vw - 65.2vh) / 2);
         top: calc((100% - 65.2vh) / 2);
+        z-index: 999;
+        -webkit-transition: all 1s ease-in-out;
+        -moz-transition: all 1s ease-in-out;
+        -o-transition: all 1s ease-in-out;
+        transition: all 1s ease-in-out;
     }
 }
 @media screen and (orientation: portrait) {
@@ -161,6 +207,11 @@ h1{
         left: calc(65px + ((100vw - 65px) - 65.2vw)/2);
         top: calc((100% - 65.2vw) / 2);
         background-color: white;
+        z-index: 999;
+        -webkit-transition: all 1s ease-in-out;
+        -moz-transition: all 1s ease-in-out;
+        -o-transition: all 1s ease-in-out;
+        transition: all 1s ease-in-out;
     }
 }
 /*Icon thumbnails styling*/
