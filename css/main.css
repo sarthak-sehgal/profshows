@@ -76,6 +76,7 @@ h1{
 #ft-name{
     /*border: 1px solid black;*/
     margin-left: 45px;
+    transition: all 0.5s;
 }
 
 #controls{

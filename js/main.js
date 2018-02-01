@@ -1,4 +1,5 @@
-vinyl = document.getElementById('vinyl');
+var vinyl = document.getElementById('vinyl');
+var profshowName = document.getElementById('ft-name');
 function init() {
 
 	document.addEventListener("wheel", wheelFunc);
@@ -41,6 +42,16 @@ function vinylTransition(){
 		vinyl.style.transform = "translateX(0px)";
 		vinyl.style.opacity = "1";
 	}, 500);
+}
+
+function changeProfshowName(name){
+	profshowName.style.opacity = "0";
+	profshowName.style.transform = "translateY(-7px)";
+	setTimeout(function(){
+		profshowName.textContent = name;
+		profshowName.style.opacity = "1";
+		profshowName.style.transform = "translateY(0px)";
+	},500);
 }
 
 init();
