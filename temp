@@ -1,0 +1,30 @@
+/*background-size: contain;
+background-position: center;
+background-repeat: no-repeat;*/
+}
+
+/*Setting the thumbnail profshow images*/
+/*.profshow-1-thmbimg{
+background-image: url('img/profshow-thmb/1.png');
+}
+.profshow-2-thmbimg{
+background-image: url('img/profshow-thmb/2.png');
+}
+.profshow-3-thmbimg{
+background-image: url('img/profshow-thmb/3.png');
+}
+.profshow-4-thmbimg{
+background-image: url('img/profshow-thmb/4.png');
+}
+.profshow-5-thmbimg{
+background-image: url('img/profshow-thmb/5.png');
+}
+.profshow-6-thmbimg{
+background-image: url('img/profshow-thmb/6.png');
+}
+.profshow-7-thmbimg{
+background-image: url('img/profshow-thmb/7.png');
+}
+.profshow-8-thmbimg{
+background-image: url('img/profshow-thmb/8.png');
+}*/
