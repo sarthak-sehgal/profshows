@@ -1,3 +1,4 @@
+vinyl = document.getElementById('vinyl');
 function init() {
 
 	document.addEventListener("wheel", wheelFunc);
@@ -32,4 +33,14 @@ function init() {
 		showsWrapper.style.marginTop = -active*65.2+"vh";
 	}
 }
+
+function vinylTransition(){
+	vinyl.style.transform = "translateX(-88px)";
+	vinyl.style.opacity = "0";
+	setTimeout(function(){
+		vinyl.style.transform = "translateX(0px)";
+		vinyl.style.opacity = "1";
+	}, 500);
+}
+
 init();
