@@ -29,6 +29,10 @@ body{
     color: #ffffff;
     display: flex;
     flex-direction: column;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
 }
 
 header{
@@ -43,6 +47,10 @@ header{
 #main{
     width: 100%;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     /*border: 1px solid black;*/
     position: relative; !important
 }
@@ -73,10 +81,15 @@ h1{
 }
 
 /*Styling of footer section*/
-#ft-name{
+.ft-name{
     /*border: 1px solid black;*/
     margin-left: 45px;
     transition: all 0.5s;
+    position: absolute;
+    opacity: 0;
+}
+.ft-name:first-child {
+    opacity: 1;
 }
 
 #controls{
@@ -122,15 +135,21 @@ h1{
     left: calc((100vw - 65.2vh) / 2);
     top: calc((100% - 65.2vh) / 2);
     z-index: 999;
+    overflow: hidden;
     -webkit-transition: all 1s ease-in-out;
     -moz-transition: all 1s ease-in-out;
     -o-transition: all 1s ease-in-out;
     transition: all 1s ease-in-out;
-    /*height: 65.2vh;
-    width: 65.2vh;*/
+    height: 65.2vh;
+    width: 65.2vh;
+    position: relative;
+    background: #000;
 }
 
 .showcase-item {
+    position: absolute;
+    left: 0;
+    top: 100%;
     background-size: cover;
     height: 65.2vh;
     width: 65.2vh;
@@ -141,7 +160,12 @@ h1{
     -o-transition: all 1s ease-in-out;
     transition: all 1s ease-in-out;
 }
-
+.showcase-item:first-child {
+    top: 0;
+}
+.showcase-item:last-child {
+    top: -100%;
+}
 #profshow-1 {
     background-image: url('../img/a1.png');
     opacity: 1;
@@ -192,6 +216,7 @@ h1{
     #showcasing-wrapper{
         height: 65.2vh;
         width: 65.2vh;
+        position: absolute;
         left: calc((100vw - 65.2vh) / 2);
         top: calc((100% - 65.2vh) / 2);
         z-index: 999;
@@ -203,6 +228,7 @@ h1{
 }
 @media screen and (orientation: portrait) {
     #showcasing-wrapper{
+        position: absolute;
         height: 65.2vw;
         width: 65.2vw;
         /*left: calc((( (100vw - 65px) - 65.2vw) / 2) + 65px);*/
