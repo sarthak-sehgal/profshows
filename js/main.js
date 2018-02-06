@@ -35,7 +35,7 @@ function init() {
 		if(scrolling==false)
 		{
 			scrolling=true;
-			setTimeout(function(){scrolling=false;}, 1200);
+			setTimeout(function(){scrolling=false;}, 800);
 
 			if(e.deltaY>0)
 				scrollDown();
@@ -49,7 +49,7 @@ function init() {
 		if(scrolling==false)
 		{
 			scrolling=true;
-			setTimeout(function(){scrolling=false;}, 1200);
+			setTimeout(function(){scrolling=false;}, 800);
 
 			if(e.keyCode==40)
 			{
