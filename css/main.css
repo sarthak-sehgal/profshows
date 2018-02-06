@@ -157,10 +157,10 @@ footer h2 {
     width: 65.2vh;
     z-index: 999;
     opacity: 0;
-    -webkit-transition: all .5s ease-in-out;
-    -moz-transition: all .5s ease-in-out;
-    -o-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
+    -webkit-transition: top .5s ease-in-out, opacity .1s ease-in-out 0.1s;
+    -moz-transition: top .5s ease-in-out, opacity .1s ease-in-out 0.1s;
+    -o-transition: top .5s ease-in-out, opacity .1s ease-in-out 0.1s;
+    transition: top .5s ease-in-out, opacity .1s ease-in-out 0.1s;
 }
 .showcase-item:first-child {
     top: 0;
