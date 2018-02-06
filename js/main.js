@@ -78,9 +78,6 @@ function init() {
 		else
 			active++;
 		fadeInName();
-		shows[active].style.transitionDuration = '0s';
-		shows[active].style.top = '100%';
-		shows[active].style.transitionDuration = '0.5s';
 		shows[active].style.opacity = 1;
 		shows[active].style.top = '0';
 	}
@@ -93,9 +90,6 @@ function init() {
 		else
 			active--;
 		fadeInName();
-		shows[active].style.transitionDuration = '0s';
-		shows[active].style.top = '-100%';
-		shows[active].style.transitionDuration = '0.5s';
 		shows[active].style.opacity = 1;
 		shows[active].style.top = '0';
 	}
