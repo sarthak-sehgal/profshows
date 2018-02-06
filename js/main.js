@@ -1,19 +1,34 @@
-var vinyl = document.getElementById('vinyl');
-var profshowName = document.getElementById('ft-name');
 function init() {
-
-	var bgs = ['red', 'blue', 'green', 'cyan', 'orange'];
-
+	var bgs = ['#C50138', 'blue', 'green', 'cyan', 'orange'];
+	
 	document.addEventListener("wheel", wheelFunc);
 	document.addEventListener("keydown", keydownFunc);
+
+	// getting elements
+	var vinyl = document.getElementById('vinyl');
+	var profshowName = document.getElementById('ft-name');
 	var bodyWrapper = document.getElementById('body-wrapper');
 	var showsWrapper = document.getElementById('showcasing-wrapper');
 	var shows = document.getElementsByClassName('showcase-item');
 	var showName = document.getElementsByClassName('ft-name');
+	// getting mobile elements
+	var items_mobile = document.getElementsByClassName('showcase-item-mobile');
+	var items_shadow = document.getElementsByClassName('showcase-shadow-mobile');
+
+	for(i=1; i<items_mobile.length; i++)
+	{
+		items_mobile[i].style.left =  i*70 + 'vw';
+		items_mobile[i].style.transform =  'scale(0.7)';
+		items_mobile[i].style.zIndex =  '1';
+		// items_shadow[i].style.left = i*150 + 'vw';
+	}
 
 	var scrolling=false;
 
 	shows[0].style.top = '0';
+	bodyWrapper.style.background = bgs[0];
+	showsWrapper.style.background = bgs[0];
+
 
 	function wheelFunc(e) {
 		e.preventDefault();
@@ -65,7 +80,7 @@ function init() {
 		fadeInName();
 		shows[active].style.transitionDuration = '0s';
 		shows[active].style.top = '100%';
-		shows[active].style.transitionDuration = '1s';
+		shows[active].style.transitionDuration = '0.5s';
 		shows[active].style.opacity = 1;
 		shows[active].style.top = '0';
 	}
@@ -80,7 +95,7 @@ function init() {
 		fadeInName();
 		shows[active].style.transitionDuration = '0s';
 		shows[active].style.top = '-100%';
-		shows[active].style.transitionDuration = '1s';
+		shows[active].style.transitionDuration = '0.5s';
 		shows[active].style.opacity = 1;
 		shows[active].style.top = '0';
 	}
@@ -90,7 +105,7 @@ function init() {
 		setTimeout(function(){
 			vinyl.style.transform = "translateX(0px)";
 			vinyl.style.opacity = "1";
-		}, 500);
+		}, 400);
 	}
 
 	function changeProfshowName(name){
