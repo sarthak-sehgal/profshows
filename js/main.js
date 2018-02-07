@@ -17,9 +17,9 @@ function init() {
 
 	for(i=1; i<items_mobile.length; i++)
 	{
-		items_mobile[i].style.left =  i*100 + '%';
+		items_mobile[i].style.left =  '100%';
 		items_mobile[i].style.transform =  'translateX(20%) scale(0.8)';
-		items_mobile[i].style.zIndex =  '1';
+		items_mobile[i].style.zIndex =  (items_mobile.length-i);
 		// items_shadow[i].style.left = i*150 + 'vw';
 	}
 
@@ -128,11 +128,48 @@ function init() {
 	// ZingTouch javascript
 	var mainSection = document.getElementById('main');
 	var touchRegion = new ZingTouch.Region(mainSection);
+	var activeMobile = 0;
 
 	touchRegion.bind(mainSection, 'swipe', function(e){
-		console.log(e.detail.data);
+		var direction = e.detail.data[0].currentDirection;
+
+		if((direction >= 315 && direction<=360) || (direction>=0 && direction < 45))
+			rightSwipe();
+		// else if(direction >= 45 && direction <135)
+		// 	topSwipe();
+		else if(direction >= 135 && direction <225)
+			leftSwipe();
+		// else
+		// 	bottomSwipe();
 	});
 
+	function rightSwipe() {
+		if(activeMobile!=0)
+		{
+			if(activeMobile<=items_mobile.length-2)items_mobile[activeMobile].style.zIndex =  items_mobile[activeMobile+1].style.zIndex+100;
+			items_mobile[activeMobile].style.left =  '100%';
+			items_mobile[activeMobile].style.transform =  'translateX(20%) scale(0.8)';
+
+			activeMobile--;
+			items_mobile[activeMobile].style.left =  '50%';
+			items_mobile[activeMobile].style.transform =  'translateX(0%) scale(1)';
+			console.log();
+		}
+	}
+
+	function leftSwipe() {
+		if(activeMobile!=items_mobile.length-1)
+		{
+			if(activeMobile>=1) items_mobile[activeMobile].style.zIndex =  items_mobile[activeMobile-1].style.zIndex+100;
+			items_mobile[activeMobile].style.left =  '0%';
+			items_mobile[activeMobile].style.transform =  'translateX(-20%) scale(0.8)';
+
+			activeMobile++;
+			items_mobile[activeMobile].style.left =  '50%';
+			items_mobile[activeMobile].style.transform =  'translateX(0%) scale(1)';
+			console.log();
+		}
+	}
 }
 
 
