@@ -42,7 +42,7 @@ function init() {
 			else
 				scrollUp();
 			vinylTransition();
-			changeBackground();
+			changeBackground(active);
 		}
 	}
 	function keydownFunc(e) {
@@ -55,13 +55,13 @@ function init() {
 			{
 				scrollDown();
 				vinylTransition();
-				changeBackground();
+				changeBackground(active);
 			}
 			else if(e.keyCode==38)
 			{
 				vinylTransition();
 				scrollUp();
-				changeBackground();
+				changeBackground(active);
 			}
 		}
 	}
@@ -112,7 +112,7 @@ function init() {
 		},500);
 	}
 
-	function changeBackground() {
+	function changeBackground(active) {
 		bodyWrapper.style.backgroundColor=bgs[active];
 		showsWrapper.style.backgroundColor=bgs[active];
 	}
@@ -153,6 +153,8 @@ function init() {
 			activeMobile--;
 			items_mobile[activeMobile].style.left =  '50%';
 			items_mobile[activeMobile].style.transform =  'translateX(0%) scale(1)';
+
+			changeBackground(activeMobile);
 			console.log();
 		}
 	}
@@ -167,6 +169,8 @@ function init() {
 			activeMobile++;
 			items_mobile[activeMobile].style.left =  '50%';
 			items_mobile[activeMobile].style.transform =  'translateX(0%) scale(1)';
+
+			changeBackground(activeMobile);
 			console.log();
 		}
 	}
