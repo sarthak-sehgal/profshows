@@ -426,4 +426,12 @@ background-image: url('../img/profshow-thmb/8.png');
         align-items: center;
         justify-content: space-around;
     }
+    header {
+        margin: 0;
+        text-align: center;
+        justify-content: center;
+    }
+    header h1 {
+        margin: 0;
+    }
 }

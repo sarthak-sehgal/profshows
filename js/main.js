@@ -18,7 +18,10 @@ function init() {
 	for(i=1; i<items_mobile.length; i++)
 	{
 		items_mobile[i].style.left =  '100%';
-		items_mobile[i].style.transform =  'translateX(20%) scale(0.8)';
+		if(i==1) 
+			items_mobile[i].style.transform =  'translateX(20%) scale(0.8)';
+		else
+			items_mobile[i].style.transform =  'translateX(50%) scale(0.8)';
 		items_mobile[i].style.zIndex =  (items_mobile.length-i);
 		// items_shadow[i].style.left = i*150 + 'vw';
 	}
@@ -118,6 +121,8 @@ function init() {
 	// ZingTouch javascript
 	var mainSection = document.getElementById('main');
 	var touchRegion = new ZingTouch.Region(mainSection);
+	var touchNext = new ZingTouch.Region(document.getElementById("next"));
+	var touchPrev = new ZingTouch.Region(document.getElementById("prev"));
 	var activeMobile = 0;
 
 	touchRegion.bind(mainSection, 'swipe', function(e){
@@ -198,6 +203,32 @@ function init() {
 		vinylTransition("7vw");
 		changeBackground(active);
 	}
+
+	/*document.getElementById("next").click = function() {
+		if(activeMobile!=items_mobile.length-1)
+		{
+			leftSwipe();
+		}
+	}
+
+	document.getElementById("prev").click = function() {
+		if(activeMobile!=0)
+		{
+			rightSwipe();
+		}
+	}*/
+	touchNext.bind(document.getElementById("next"), 'tap', function(e){
+		if(activeMobile!=items_mobile.length-1)
+		{
+			leftSwipe();
+		}
+	});
+	touchPrev.bind(document.getElementById("prev"), 'tap', function(e){
+		if(activeMobile!=0)
+		{
+			rightSwipe();
+		}
+	});
 }
 
 
