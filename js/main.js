@@ -70,26 +70,26 @@ function init() {
 	function scrollDown() {
 		shows[active].style.opacity = 0;
 		shows[active].style.top = '-100%';
-		fadeOutName();
+		fadeOutName(active);
 		if(active==shows.length-1)
 		{
 			active=0;
 		}
 		else
 			active++;
-		fadeInName();
+		fadeInName(active);
 		shows[active].style.opacity = 1;
 		shows[active].style.top = '0';
 	}
 	function scrollUp() {
 		shows[active].style.opacity = 0;
 		shows[active].style.top = '100%';
-		fadeOutName();
+		fadeOutName(active);
 		if(active==0)
 			active=shows.length-1;
 		else
 			active--;
-		fadeInName();
+		fadeInName(active);
 		shows[active].style.opacity = 1;
 		shows[active].style.top = '0';
 	}
@@ -102,26 +102,16 @@ function init() {
 		}, 400);
 	}
 
-	function changeProfshowName(name){
-		profshowName.style.opacity = "0";
-		profshowName.style.transform = "translateY(-7px)";
-		setTimeout(function(){
-			profshowName.textContent = name;
-			profshowName.style.opacity = "1";
-			profshowName.style.transform = "translateY(0px)";
-		},500);
-	}
-
 	function changeBackground(active) {
 		bodyWrapper.style.backgroundColor=bgs[active];
 		showsWrapper.style.backgroundColor=bgs[active];
 	}
 
-	function fadeOutName() {
+	function fadeOutName(active) {
 		showName[active].style.opacity=0;
 	}
 
-	function fadeInName() {
+	function fadeInName(active) {
 		showName[active].style.opacity=1;
 	}
 
@@ -153,8 +143,9 @@ function init() {
 			}
 			items_mobile[activeMobile].style.left =  '100%';
 			items_mobile[activeMobile].style.transform =  'translateX(20%) scale(0.8)';
-
+			fadeOutName(activeMobile);
 			activeMobile--;
+			fadeInName(activeMobile);
 			items_mobile[activeMobile].style.left =  '50%';
 			items_mobile[activeMobile].style.transform =  'translateX(0%) scale(1)';
 
@@ -176,8 +167,9 @@ function init() {
 			}
 			items_mobile[activeMobile].style.left =  '0%';
 			items_mobile[activeMobile].style.transform =  'translateX(-20%) scale(0.8)';
-
+			fadeOutName(activeMobile);
 			activeMobile++;
+			fadeInName(activeMobile);
 			items_mobile[activeMobile].style.left =  '50%';
 			items_mobile[activeMobile].style.transform =  'translateX(0%) scale(1)';
 
