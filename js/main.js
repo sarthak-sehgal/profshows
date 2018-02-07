@@ -41,7 +41,7 @@ function init() {
 				scrollDown();
 			else
 				scrollUp();
-			vinylTransition();
+			vinylTransition("14vh");
 			changeBackground(active);
 		}
 	}
@@ -54,12 +54,12 @@ function init() {
 			if(e.keyCode==40)
 			{
 				scrollDown();
-				vinylTransition();
+				vinylTransition("14vh");
 				changeBackground(active);
 			}
 			else if(e.keyCode==38)
 			{
-				vinylTransition();
+				vinylTransition("14vh");
 				scrollUp();
 				changeBackground(active);
 			}
@@ -93,8 +93,8 @@ function init() {
 		shows[active].style.opacity = 1;
 		shows[active].style.top = '0';
 	}
-	function vinylTransition(){
-		vinyl.style.transform = "translateX(-88px)";
+	function vinylTransition(vinylTranslate){
+		vinyl.style.transform = "translateX(-"+vinylTranslate+")";
 		vinyl.style.opacity = "0";
 		setTimeout(function(){
 			vinyl.style.transform = "translateX(0px)";
@@ -123,14 +123,20 @@ function init() {
 	touchRegion.bind(mainSection, 'swipe', function(e){
 		var direction = e.detail.data[0].currentDirection;
 
-		if((direction >= 315 && direction<=360) || (direction>=0 && direction < 45))
-			rightSwipe();
-		// else if(direction >= 45 && direction <135)
-		// 	topSwipe();
-		else if(direction >= 135 && direction <225)
-			leftSwipe();
-		// else
-		// 	bottomSwipe();
+		if(parseInt(screen.width)<=480)
+		{
+			if((direction >= 315 && direction<=360) || (direction>=0 && direction < 45))
+				rightSwipe();
+			else if(direction >= 135 && direction <225)
+				leftSwipe();
+		}
+		else
+		{
+			if(direction >= 45 && direction <135)
+				topSwipe();
+			else if(direction>=225 && direction<315)
+				bottomSwipe();
+		}	
 	});
 
 	function rightSwipe() {
@@ -179,6 +185,18 @@ function init() {
 			changeBackground(activeMobile);
 			console.log();
 		}
+	}
+
+	function topSwipe() {
+		scrollDown();
+		vinylTransition("7vw");
+		changeBackground(active);
+	}
+
+	function bottomSwipe() {
+		scrollUp();
+		vinylTransition("7vw");
+		changeBackground(active);
 	}
 }
 
