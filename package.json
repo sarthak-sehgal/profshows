@@ -1,0 +1,19 @@
+{
+  "name": "profshows",
+  "version": "1.0.0",
+  "description": "Official website for the prof shows of APOGEE 2018.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarthak-sehgal/profshows.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sarthak-sehgal/profshows/issues"
+  },
+  "homepage": "https://github.com/sarthak-sehgal/profshows#readme"
+}

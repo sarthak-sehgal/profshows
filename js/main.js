@@ -17,8 +17,8 @@ function init() {
 
 	for(i=1; i<items_mobile.length; i++)
 	{
-		items_mobile[i].style.left =  i*70 + 'vw';
-		items_mobile[i].style.transform =  'scale(0.7)';
+		items_mobile[i].style.left =  i*100 + '%';
+		items_mobile[i].style.transform =  'translateX(20%) scale(0.8)';
 		items_mobile[i].style.zIndex =  '1';
 		// items_shadow[i].style.left = i*150 + 'vw';
 	}
@@ -124,6 +124,15 @@ function init() {
 	function fadeInName() {
 		showName[active].style.opacity=1;
 	}
+
+	// ZingTouch javascript
+	var mainSection = document.getElementById('main');
+	var touchRegion = new ZingTouch.Region(mainSection);
+
+	touchRegion.bind(mainSection, 'swipe', function(e){
+		console.log(e.detail.data);
+	});
+
 }
 
 
