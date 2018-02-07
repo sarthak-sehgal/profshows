@@ -146,13 +146,20 @@ function init() {
 	function rightSwipe() {
 		if(activeMobile!=0)
 		{
-			if(activeMobile<=items_mobile.length-2)items_mobile[activeMobile].style.zIndex =  items_mobile[activeMobile+1].style.zIndex+100;
+			if(activeMobile<=items_mobile.length-2)
+			{
+				items_mobile[activeMobile].style.zIndex =  items_mobile[activeMobile+1].style.zIndex+100;
+				items_mobile[activeMobile+1].style.transform = 'translateX(100%)';
+			}
 			items_mobile[activeMobile].style.left =  '100%';
 			items_mobile[activeMobile].style.transform =  'translateX(20%) scale(0.8)';
 
 			activeMobile--;
 			items_mobile[activeMobile].style.left =  '50%';
 			items_mobile[activeMobile].style.transform =  'translateX(0%) scale(1)';
+
+			if(activeMobile-1>=0)
+				items_mobile[activeMobile-1].style.transform =  'translateX(-20%) scale(0.8)';
 
 			changeBackground(activeMobile);
 			console.log();
@@ -162,13 +169,20 @@ function init() {
 	function leftSwipe() {
 		if(activeMobile!=items_mobile.length-1)
 		{
-			if(activeMobile>=1) items_mobile[activeMobile].style.zIndex =  items_mobile[activeMobile-1].style.zIndex+100;
+			if(activeMobile>=1)
+			{
+				items_mobile[activeMobile].style.zIndex =  items_mobile[activeMobile-1].style.zIndex+100;
+				items_mobile[activeMobile-1].style.transform = 'translateX(-100%)';
+			}
 			items_mobile[activeMobile].style.left =  '0%';
 			items_mobile[activeMobile].style.transform =  'translateX(-20%) scale(0.8)';
 
 			activeMobile++;
 			items_mobile[activeMobile].style.left =  '50%';
 			items_mobile[activeMobile].style.transform =  'translateX(0%) scale(1)';
+
+			if(activeMobile+1<=items_mobile.length-1)
+				items_mobile[activeMobile+1].style.transform =  'translateX(20%) scale(0.8)';
 
 			changeBackground(activeMobile);
 			console.log();
