@@ -11,6 +11,7 @@ function init() {
 	var showsWrapper = document.getElementById('showcasing-wrapper');
 	var shows = document.getElementsByClassName('showcase-item');
 	var showName = document.getElementsByClassName('ft-name');
+	var shadow = document.getElementById('showcase-shadow');
 	// getting mobile elements
 	var items_mobile = document.getElementsByClassName('showcase-item-mobile');
 	var items_shadow = document.getElementsByClassName('showcase-shadow-mobile');
@@ -31,6 +32,9 @@ function init() {
 	shows[0].style.top = '0';
 	bodyWrapper.style.background = bgs[0];
 	showsWrapper.style.background = bgs[0];
+
+	var active = 0;
+	var activeMobile = 0;
 
 
 	function wheelFunc(e) {
@@ -66,9 +70,9 @@ function init() {
 				scrollUp();
 				changeBackground(active);
 			}
+			activeMobile=active;
 		}
 	}
-	var active = 0;
 
 	function scrollDown() {
 		shows[active].style.opacity = 0;
@@ -123,7 +127,6 @@ function init() {
 	var touchRegion = new ZingTouch.Region(mainSection);
 	var touchNext = new ZingTouch.Region(document.getElementById("next"));
 	var touchPrev = new ZingTouch.Region(document.getElementById("prev"));
-	var activeMobile = 0;
 
 	touchRegion.bind(mainSection, 'swipe', function(e){
 		var direction = e.detail.data[0].currentDirection;
@@ -203,20 +206,6 @@ function init() {
 		vinylTransition("7vw");
 		changeBackground(active);
 	}
-
-	/*document.getElementById("next").click = function() {
-		if(activeMobile!=items_mobile.length-1)
-		{
-			leftSwipe();
-		}
-	}
-
-	document.getElementById("prev").click = function() {
-		if(activeMobile!=0)
-		{
-			rightSwipe();
-		}
-	}*/
 	touchNext.bind(document.getElementById("next"), 'tap', function(e){
 		if(activeMobile!=items_mobile.length-1)
 		{
@@ -229,6 +218,28 @@ function init() {
 			rightSwipe();
 		}
 	});
+
+	// navigation transitions and animations
+	var thumbIcons = document.getElementsByClassName('thumbIcons')[0];
+
+	thumbIcons.onmouseover = function ()
+	{
+		if(parseInt(screen.width)<480)
+		{
+			showsWrapper.style.transform = "translateX(7vw)";
+			shadow.style.transform = "translateX(7vw)";	
+		}
+		else
+		{
+			showsWrapper.style.transform = "translateX(14vh)";
+			shadow.style.transform = "translateX(14vh)";		
+		}
+	}
+	thumbIcons.onmouseout = function()
+	{
+		showsWrapper.style.transform = "translateX(0vh)";
+		shadow.style.transform = "translateX(0vh)";
+	}
 }
 
 
