@@ -1,6 +1,6 @@
 function init() {
 	var bgs = ['#C50138', 'blue', 'green', 'cyan', 'orange'];
-	
+
 	document.addEventListener("wheel", wheelFunc);
 	document.addEventListener("keydown", keydownFunc);
 
@@ -15,11 +15,13 @@ function init() {
 	// getting mobile elements
 	var items_mobile = document.getElementsByClassName('showcase-item-mobile');
 	var items_shadow = document.getElementsByClassName('showcase-shadow-mobile');
+	var mobileMenuWrapper = document.getElementById('main-menu-wrapper');
+	// var isMobileMenuOpen = false;
 
 	for(i=1; i<items_mobile.length; i++)
 	{
 		items_mobile[i].style.left =  '100%';
-		if(i==1) 
+		if(i==1)
 			items_mobile[i].style.transform =  'translateX(20%) scale(0.8)';
 		else
 			items_mobile[i].style.transform =  'translateX(50%) scale(0.8)';
@@ -144,7 +146,7 @@ function init() {
 				topSwipe();
 			else if(direction>=225 && direction<315)
 				bottomSwipe();
-		}	
+		}
 	});
 
 	function rightSwipe() {
@@ -227,12 +229,12 @@ function init() {
 		if(parseInt(screen.width)<480)
 		{
 			showsWrapper.style.transform = "translateX(7vw)";
-			shadow.style.transform = "translateX(7vw)";	
+			shadow.style.transform = "translateX(7vw)";
 		}
 		else
 		{
 			showsWrapper.style.transform = "translateX(14vh)";
-			shadow.style.transform = "translateX(14vh)";		
+			shadow.style.transform = "translateX(14vh)";
 		}
 	}
 	thumbIcons.onmouseout = function()
