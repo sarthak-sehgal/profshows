@@ -395,8 +395,9 @@ footer h2 {
     }
     header {
         margin: 0;
-        text-align: center;
-        justify-content: center;
+        /*text-align: center;*/
+        /*justify-content: center;*/
+        padding-left: 16.3667px;
     }
     header h1 {
         margin: 0;
