@@ -1,5 +1,5 @@
 function init() {
-	var bgs = ['#C50138', 'blue', 'green', 'cyan', 'orange'];
+	var bgs = ['#134A42', '#100F0F', 'green', 'cyan', 'orange'];
 
 	document.addEventListener("wheel", wheelFunc);
 	document.addEventListener("keydown", keydownFunc);
@@ -224,24 +224,24 @@ function init() {
 	// navigation transitions and animations
 	var thumbIcons = document.getElementsByClassName('thumbIcons')[0];
 
-	thumbIcons.onmouseover = function ()
-	{
-		if(parseInt(screen.width)<480)
-		{
-			showsWrapper.style.transform = "translateX(7vw)";
-			shadow.style.transform = "translateX(7vw)";
-		}
-		else
-		{
-			showsWrapper.style.transform = "translateX(14vh)";
-			shadow.style.transform = "translateX(14vh)";
-		}
-	}
-	thumbIcons.onmouseout = function()
-	{
-		showsWrapper.style.transform = "translateX(0vh)";
-		shadow.style.transform = "translateX(0vh)";
-	}
+	// thumbIcons.onmouseover = function ()
+	// {
+	// 	if(parseInt(screen.width)<480)
+	// 	{
+	// 		showsWrapper.style.transform = "translateX(7vw)";
+	// 		shadow.style.transform = "translateX(7vw)";
+	// 	}
+	// 	else
+	// 	{
+	// 		showsWrapper.style.transform = "translateX(14vh)";
+	// 		shadow.style.transform = "translateX(14vh)";
+	// 	}
+	// }
+	// thumbIcons.onmouseout = function()
+	// {
+	// 	showsWrapper.style.transform = "translateX(0vh)";
+	// 	shadow.style.transform = "translateX(0vh)";
+	// }
 }
 
 
